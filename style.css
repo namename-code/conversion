@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #db36c0 0%, #a20f85 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.converter-card {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(255, 0, 0, 0.3);
+    padding: 35px 40px 40px;
+    transition: transform 0.3s ease;
+}
+
+.converter-card:hover {
+    transform: translateY(-5px);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff0000 0%, #c90f0f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #7c8ba0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.currency-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.currency-group label {
+    font-weight: 700;
+    color: #4a5568;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.currency-group input,
+.currency-group select {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2d3748;
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.currency-group input {
+    cursor: text;
+}
+
+.currency-group input:focus,
+.currency-group select:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 0 3px rgba(152, 42, 42, 0.1);
+    background: white;
+}
+
+.currency-row {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    margin: 30px 0 25px;
+    flex-wrap: wrap;
+}
+
+.swap-icon {
+    background: linear-gradient(135deg, #c812b8 0%, #b50da1 100%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 4px;
+}
+
+.swap-icon:hover {
+    transform: rotate(180deg) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.result-section {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+    border-radius: 24px;
+    padding: 20px 25px;
+    margin: 20px 0 25px;
+    border: 1px solid #e0e7ff;
+}
+
+.result-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.result-label {
+    font-weight: 700;
+    color: #4a5568;
+    font-size: 1.1rem;
+}
+
+.result-value {
+    font-size: 1.9rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #bf0ecc 0%, #8c14a4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    word-break: break-word;
+}
+
+.rate-info {
+    font-size: 0.85rem;
+    color: #3a5a8c;
+    padding-top: 12px;
+    border-top: 1px solid #cbd5e0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.update-info {
+    text-align: center;
+    font-size: 0.7rem;
+    margin-top: 10px;
+    font-weight: 500;
+    padding: 8px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.update-info.loading {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.update-info.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.update-info.error {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+@media (max-width: 600px) {
+    .converter-card {
+        padding: 25px 20px 30px;
+    }
+    
+    .currency-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .swap-icon {
+        align-self: center;
+        width: 45px;
+        height: 45px;
+        margin: 5px 0;
+    }
+    
+    .result-value {
+        font-size: 1.5rem;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .result-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
